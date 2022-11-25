@@ -57,7 +57,7 @@ export const getHistorialR = async (req, res) => {
         idUser,
         fecha,
         dias,
-        total,
+        total: dias*total,
       });
   
       res.json(newHistorialR);
