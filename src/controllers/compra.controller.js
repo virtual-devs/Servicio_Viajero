@@ -27,6 +27,7 @@ export const getHistorialR = async (req, res) => {
           idUser: id,
         },
       });
+      rows.reverse();
       res.json({ count, rows });
     } catch (error) {
       return res.status(500).json({ massage: error.massage });
@@ -41,6 +42,7 @@ export const getHistorialR = async (req, res) => {
           idUser: id,
         },
       });
+      rows.reverse();
       res.json({ count, rows });
     } catch (error) {
       return res.status(500).json({ massage: error.massage });
