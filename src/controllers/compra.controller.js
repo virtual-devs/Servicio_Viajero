@@ -50,13 +50,13 @@ export const getHistorialR = async (req, res) => {
   };
   
   export const createHistorialR = async (req, res) => {
-    const { idEmpresa, idRenta, idUser, fecha, dias, total } = req.body;
+    const { idUser, nombreEmpresa, nombre, fecha, dias, total } = req.body;
   
     try {
       const newHistorialR = await HistorialR.create({
-        idEmpresa,
-        idRenta,
         idUser,
+        nombreEmpresa,
+        nombre,
         fecha,
         dias,
         total: dias*total,
@@ -69,15 +69,19 @@ export const getHistorialR = async (req, res) => {
   };
   
   export const createHistorialV = async (req, res) => {
-    const { idEmpresa, idViaje, idUser, fecha, hora, total } = req.body;
+    const { idUser, nombreEmpresa, nombre, fecha, hora, fechaSalida, horaSalida, origen, destino, total } = req.body;
   
     try {
       const newHistorialV = await HistorialV.create({
-        idEmpresa,
-        idViaje,
         idUser,
+        nombreEmpresa,
+        nombre,
         fecha,
         hora,
+        fechaSalida,
+        horaSalida,
+        origen,
+        destino,
         total
       });
   
